@@ -5,9 +5,6 @@ import themes from './themes'
 import parseLanguages from 'base-shell/lib/utils/locale'
 
 const config = {
-  auth: {
-    signInURL: '/signin',
-  },
   routes,
   locale: {
     locales,
@@ -17,18 +14,14 @@ const config = {
       return
     },
   },
-  menu: {
-    MenuContent: lazy(() => import('../components/Menu/MenuContent')),
-  },
   theme: {
     themes,
     defaultThemeID: 'default',
     defaultIsDarkMode: false,
-    defaultIsRTL: false, //change this to true for default Right to Left Language support
+    defaultIsRTL: true, //change this to true for default Right to Left Language support
   },
   pages: {
     LandingPage: lazy(() => import('../pages/LandingPage/LandingPage')),
-    PageNotFound: lazy(() => import('../pages/PageNotFound/PageNotFound')),
   },
 }
 
