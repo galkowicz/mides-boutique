@@ -61,6 +61,7 @@ const useStyles = makeStyles((theme) => ({
   },
   logoContainer: {
     width: '5rem',
+    paddingTop: '1rem',
   },
   logo: {
     maxWidth: '100%',
@@ -73,6 +74,11 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: ['Heebo', 'sans-serif'].join(','),
     padding: '.5rem',
     fontSize: '1rem',
+    '& a': {
+      color: '#3c1d0e',
+      fontWeight: '700',
+      textShadow: '.2rem .2rem .2rem #e96b1e'
+    }
   },
 }))
 
@@ -117,8 +123,8 @@ export default function LandingPage() {
           <source srcSet={midesLogo} />
           <img className={classes.logo} alt="mides logo" />
         </picture>
-        <Typography className={classes.phoneNumber} variant="h4" align="center">
-          <Link href="tel:+0546744197">
+        <Typography className={classes.phoneNumber} variant="h3" align="center">
+          <Link href="tel:+972546744197">
             0546744197
           </Link>
         </Typography>
