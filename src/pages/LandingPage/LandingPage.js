@@ -46,13 +46,18 @@ const useStyles = makeStyles((theme) => ({
   content: {
     backgroundColor: '#fff',
   },
-  footer: { // TODO make footer fixed to button and no background on mobile
+  footer: {
     display: 'flex',
     alignItems: 'center',
     width: '100%',
     justifyContent: 'space-between',
     padding: '0 2rem',
     backgroundColor: '#fff',
+    [theme.breakpoints.up('xs')]: {
+      position: 'fixed',
+      bottom: '0',
+      backgroundColor: 'transparent',
+    },
   },
   logoContainer: {
     width: '5rem',
@@ -62,7 +67,7 @@ const useStyles = makeStyles((theme) => ({
     height: 'auto',
   },
   link: {
-    color: "#e96b1e"
+    color: '#e96b1e',
   },
   phoneNumber: {
     fontFamily: ['Heebo', 'sans-serif'].join(','),
@@ -113,7 +118,9 @@ export default function LandingPage() {
           <img className={classes.logo} alt="mides logo" />
         </picture>
         <Typography className={classes.phoneNumber} variant="h4" align="center">
-          0546744197
+          <Link href="tel:+0546744197">
+            0546744197
+          </Link>
         </Typography>
         <Link
           className={classes.link}
